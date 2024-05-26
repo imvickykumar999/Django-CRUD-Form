@@ -3,7 +3,7 @@
 {% block title %}Update Entry{% endblock %}
 
 {% block content %}
-<div class="main">
+<div class="form-entry">
     <form method="POST">
         {% csrf_token %}
         <div class="form-group">
@@ -14,7 +14,7 @@
             <label for="id_description">Description:</label>
             {{ form.description }}
         </div>
-        <div class="form-group">
+        <div class="form-group-button">
             <input type="submit" value="Update" class="btn">
         </div>
     </form>

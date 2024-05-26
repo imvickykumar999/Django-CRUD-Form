@@ -4,7 +4,7 @@
 
 {% block content %}
     {% for data in dataset %}
-    <div class="main">
+    <div class="entry">
         <div class="content-wrapper">
             <p><strong>ID:</strong> {{ data.id }}</p>
             <p><strong>Title:</strong> {{ data.title }}</p>
@@ -14,14 +14,7 @@
             <a href="{% url 'detail_view' data.id %}">
                 <button type="button">View Details</button>
             </a>
-            <a href="{% url 'update_view' data.id %}">
-                <button type="button">Update</button>
-            </a>
-            <a href="{% url 'delete_view' data.id %}">
-                <button type="button">Delete</button>
-            </a>
         </div>
     </div>
-    <hr/>
     {% endfor %}
 {% endblock %}
