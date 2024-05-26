@@ -1,4 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail View{% endblock %}
+
+{% block content %}
 <div class="main">
-    {{ data.title }}<br/>
-    {{ data.description }}<br/>
+    <p><strong>ID:</strong> {{ data.id }}</p>
+    <p><strong>Title:</strong> {{ data.title }}</p>
+    <p class="description"><strong>Description:</strong> {{ data.description }}</p>
 </div>
+{% endblock %}

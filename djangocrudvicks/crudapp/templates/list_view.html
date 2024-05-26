@@ -1,7 +1,27 @@
-<div class="main">
+{% extends 'base.html' %}
+
+{% block title %}List of Entries{% endblock %}
+
+{% block content %}
     {% for data in dataset %}
-    {{ data.title }}<br/>
-    {{ data.description }}<br/>
+    <div class="main">
+        <div class="content-wrapper">
+            <p><strong>ID:</strong> {{ data.id }}</p>
+            <p><strong>Title:</strong> {{ data.title }}</p>
+            <p class="description"><strong>Description:</strong> {{ data.description }}</p>
+        </div>
+        <div class="buttons">
+            <a href="{% url 'detail_view' data.id %}">
+                <button type="button">View Details</button>
+            </a>
+            <a href="{% url 'update_view' data.id %}">
+                <button type="button">Update</button>
+            </a>
+            <a href="{% url 'delete_view' data.id %}">
+                <button type="button">Delete</button>
+            </a>
+        </div>
+    </div>
     <hr/>
     {% endfor %}
-</div>
+{% endblock %}

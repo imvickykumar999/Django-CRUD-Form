@@ -12,8 +12,9 @@ def create_view(request):
 
 # List View
 def list_view(request):
-    dataset = GeeksModel.objects.all()
-    return render(request, "list_view.html", {'dataset': dataset})
+    context = {}
+    context["dataset"] = GeeksModel.objects.all()
+    return render(request, "list_view.html", context)
 
 # Detail View
 def detail_view(request, id):
