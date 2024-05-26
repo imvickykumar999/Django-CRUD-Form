@@ -4,11 +4,14 @@
 
 {% block content %}
     {% for data in dataset %}
-    <div class="entry">
+    <div class="entry" style="width: 100%;">
         <div class="content-wrapper">
             <p><strong>ID:</strong> {{ data.id }}</p>
             <p><strong>Title:</strong> {{ data.title }}</p>
-            <p class="description"><strong>Description:</strong> {{ data.description }}</p>
+            <p><strong>Description:</strong></p>
+            <div class="description-card">
+                <p class="description">{{ data.description }}</p>
+            </div>
         </div>
         <div class="buttons">
             <a href="{% url 'detail_view' data.id %}">

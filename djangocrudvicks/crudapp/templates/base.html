@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>{% block title %}My Django App{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,7 +43,7 @@
             margin: 20px auto;
             padding: 20px;
             flex: 1;
-            width: 100%;
+            width: calc(100% - 40px); /* Ensure container width adjusts to avoid horizontal scrolling */
         }
         .entry, .form-entry {
             background: white;
@@ -51,6 +53,12 @@
             margin-bottom: 20px;
             display: flex;
             flex-direction: column;
+        }
+        .description-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
         }
         .form-group {
             margin-bottom: 15px;
