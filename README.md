@@ -1,3 +1,11 @@
+>## `CRUD` : https://djangocrudvicks.pythonanywhere.com/
+>
+>![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/177247dc-de93-4ae7-a145-b1387d2ced93)
+>![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/51e7e0e5-eddc-424d-a7cb-0e8958966c11)
+>![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/ab492a9f-4c52-44c6-8e10-e7848f479668)
+>![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/9278bb7e-9d33-4020-a586-e166c7c68bd6)
+>![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/7d201a8b-9de6-4266-a9f4-77a000a56871)
+
 Let's create a Django project named `crudproject` with an app named `crudapp` that implements CRUD functionality. Here are the step-by-step commands and instructions:
 
 ### 1. Install Django
