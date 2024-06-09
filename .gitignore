@@ -1,3 +1,5 @@
 
-/crudproject/.venv
+.venv
 crudproject/crudproject/.env
+.venv/Lib/site-packages/pip-24.0.dist-info/METADATA
+*.pyc
