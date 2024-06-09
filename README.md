@@ -26,6 +26,14 @@
 
 Let's create a Django project named `crudproject` with an app named `crudapp` that implements CRUD functionality. Here are the step-by-step commands and instructions:
 
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+
+deactivate
+.venv\Scripts\activate
+```
+
 ### 1. Install Django
 Make sure Django is installed. If not, install it using pip:
 ```bash
