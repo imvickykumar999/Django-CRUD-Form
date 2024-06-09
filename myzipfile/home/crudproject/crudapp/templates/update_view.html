@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Entry{% endblock %}
+
+{% block content %}
+<div class="form-entry">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="id_title">Title:</label>
+            {{ form.title }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_description">Description:</label>
+            {{ form.description }}
+        </div>
+        
+        <div class="form-group">
+            <label for="id_foto">Upload:</label>
+            <input type="file" name="foto" id="id_foto">
+        </div>
+        <div class="form-group-button">
+            <input type="submit" value="Save" class="btn">
+        </div>
+
+        {% if form.instance.foto %}
+            <p><strong>Image:</strong></p>
+
+            <div class="image-preview">
+                <img width="800px" src="{{ form.instance.foto.url }}" alt="Current Image">
+            </div>
+        {% endif %}
+
+    </form>
+</div>
+{% endblock %}
