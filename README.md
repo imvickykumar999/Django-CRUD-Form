@@ -254,3 +254,42 @@ python manage.py runserver
 - Visit `http://localhost:8000/<id>/delete/` to delete a specific entry.
 
 By following these steps, you'll have a fully functional Django CRUD application named `crudproject` with an app named `crudapp`.
+
+---
+
+Running the Django development server with the command `python manage.py runserver 0.0.0.0:8000` will allow the server to be accessible on any network interface of the host machine. This means you can access your application from other devices on your local network using the IP address of the host machine.
+
+### Step-by-Step Guide
+
+1. **Run the Server:**
+   Start the Django development server to listen on all available IP addresses:
+
+   ```bash
+   python manage.py runserver 0.0.0.0:8000
+   ```
+
+2. **Access the Application:**
+   Open a web browser on any device connected to the same network as your Django server. Enter the following URL to access the application:
+
+   ```http
+   http://192.168.0.100:8000/
+   ```
+
+### Additional Notes
+
+- **Network Configuration:**
+  Ensure that your local network allows traffic on port 8000, and your host machine's firewall is configured to allow incoming connections on this port.
+
+- **Finding Your Local IP Address:**
+  If you don't know your local IP address, you can find it using the following methods:
+  
+  - **Windows:**
+    Open Command Prompt and type `ipconfig`. Look for the `IPv4 Address`.
+    
+  - **macOS/Linux:**
+    Open Terminal and type `ifconfig` or `ip a`. Look for the `inet` address in the relevant network interface section.
+
+- **Security Considerations:**
+  The Django development server is not intended for production use. It is recommended to use it only in a development environment. For a production environment, consider using a robust web server like Gunicorn or uWSGI, along with a reverse proxy server like Nginx or Apache.
+
+By following these instructions, you can access and test your Django application on different devices within your local network.
