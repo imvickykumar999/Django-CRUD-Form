@@ -1,4 +1,22 @@
->## `CRUD` : https://djangocrudvicks.pythonanywhere.com/
+>## `IPV4 Address` : http://192.168.0.100:8000/
+>
+> ```py
+> ALLOWED_HOSTS = ['djangocrudvicks.pythonanywhere.com', '127.0.0.1', 'localhost', '192.168.0.100']
+> ```
+>
+>     >>> python manage.py runserver 0.0.0.0:8000
+>
+> [![WhatsApp Image 2024-06-09 at 13 21 07_381d7831](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/4eeab633-c4c4-44bc-bf8e-7e138521c082)](http://192.168.0.100:8000/)
+>
+> ---
+>
+>     Run `ipconfig` and Use [IPV4 Address] to run server on PUBLIC Network and access project on mobile.
+>
+>![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/896dff5c-1caa-4d2b-904f-9ca5bebf9b81)
+>
+> ---
+>
+>## `HOSTED` : https://djangocrudvicks.pythonanywhere.com/
 >
 >![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/177247dc-de93-4ae7-a145-b1387d2ced93)
 >![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/51e7e0e5-eddc-424d-a7cb-0e8958966c11)
