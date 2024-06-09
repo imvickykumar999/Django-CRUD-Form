@@ -1,9 +1,13 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import GeeksForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from .forms import RegistrationForm, GeeksForm, LoginForm
 from .models import GeeksModel
 import os
 
+
+@login_required
 def create_view(request):
     context = {}
     form = GeeksForm(request.POST, request.FILES)
@@ -28,6 +32,7 @@ def detail_view(request, id):
     return render(request, "detail_view.html", context)
 
 
+@login_required
 def update_view(request, id):
     obj = get_object_or_404(GeeksModel, id=id)
     old_image_path = obj.foto.path if obj.foto else None
@@ -49,6 +54,7 @@ def update_view(request, id):
     return render(request, "update_view.html", context)
 
 
+@login_required
 def delete_view(request, id):
     obj = get_object_or_404(GeeksModel, id=id)
     if request.method == "POST":
@@ -64,3 +70,39 @@ def delete_view(request, id):
 
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
+
+
+def custom_login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('list_view')
+            else:
+                pass
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
+
+
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login page after successful registration
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('list_view')
+    else:
+        return redirect('list_view')

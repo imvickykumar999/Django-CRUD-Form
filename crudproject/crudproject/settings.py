@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+bnw67qdf-&yhxri&@@u9zeye3w)u^)v(^s!*b+$$niwef1*&i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['crudproject.pythonanywhere.com', '192.168.0.100', '127.0.0.1']
+ALLOWED_HOSTS = ['crudproject.pythonanywhere.com', '192.168.0.100', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -129,3 +129,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'list_view'
+LOGOUT_REDIRECT_URL = 'list_view'
