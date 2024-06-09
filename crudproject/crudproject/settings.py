@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['crudproject.pythonanywhere.com', '192.168.0.100', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -125,7 +124,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/crudproject/crudproject/media'
+
+MEDIA_ROOT = '/crudproject/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/crudproject/crudproject/static'
-STATIC_URL = '/static/'
+
+STATIC_ROOT = '/crudproject/static'
