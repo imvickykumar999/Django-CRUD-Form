@@ -32,7 +32,7 @@
         }
         .right-nav ul li {
             display: inline;
-        }        
+        }
         nav ul {
             list-style: none;
             padding: 0;
@@ -218,7 +218,7 @@
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <li><input class="nav-btn" type="submit" value="Logout"></li>
-                    </form> 
+                    </form>
                 {% else %}
                     <li><a href="{% url 'login' %}">Login</a></li>
                 {% endif %}
@@ -232,4 +232,5 @@
         Made with ❤️ by <a target="_blank" href="https://github.com/imvickykumar999/Django-CRUD-Form" style="color: white; text-decoration: none;">@imvickykumar999</a>
     </footer>
 </body>
+
 </html>

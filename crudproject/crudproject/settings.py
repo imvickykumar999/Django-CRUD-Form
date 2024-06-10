@@ -118,18 +118,21 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-# default static files settings for PythonAnywhere.
-# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-
-# Define the URL where media files will be served from
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# default static files settings for PythonAnywhere.
+# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
+
+# Define the URL where media files will be served from
+MEDIA_URL = '/media/'
+
+# Define the filesystem path where uploaded media files will be stored
+MEDIA_ROOT = BASE_DIR / 'crudproject/media'
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'list_view'
 LOGOUT_REDIRECT_URL = 'list_view'
+
