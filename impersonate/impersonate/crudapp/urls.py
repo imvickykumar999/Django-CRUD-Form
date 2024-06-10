@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 # from .views import custom_login_view
-# from .views import register
+from .views import register
 
 urlpatterns = [
     path('', list_view, name='list_view'),
@@ -15,7 +15,7 @@ urlpatterns = [
     path('<int:id>/delete/', delete_view, name='delete_view'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='list_view'), name='logout'),
-    # path('register/', register, name='register'),
+    path('register/', register, name='register'),
 ]
 
 # Custom handler for 404 errors
