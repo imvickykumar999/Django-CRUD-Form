@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}List of Entries{% endblock %}
+
+{% block content %}
+    {% for data in dataset %}
+    <div class="entry" style="width: 100%;">
+        <div class="content-wrapper">
+            <div class="content">
+
+                {% comment %} <p><strong>ID:</strong> {{ data.id }}</p> {% endcomment %}
+                <p><strong>Title:</strong> {{ data.title }}</p>
+                <p><strong>Description:</strong></p>
+
+                <div class="description-card">
+                    <p class="description">{{ data.description|safe }}</p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="{% url 'detail_view' data.id %}">
+                    <button type="button">View Details</button>
+                </a>
+            </div>
+    
+            {% if data.foto %}
+                <p><strong>Image:</strong></p>
+
+                <div class="image-wrapper">
+                    <img width="800px" src="{{ data.foto.url }}" alt="{{ data.title }}">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <br><br>
+    {% endfor %}
+{% endblock %}
