@@ -1,6 +1,6 @@
 > # https://crudproject.pythonanywhere.com/
 > 
-> ![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/f88f4745-5943-4d54-a0bb-fd7c300f6321)
+> ![image](https://github.com/imvickykumar999/Django-CRUD-Form/assets/50515418/11acd50e-ea3c-4e2b-8511-1dde9e46fbf7)
 > 
 >     https://crudproject.pythonanywhere.com/11/
 > 
