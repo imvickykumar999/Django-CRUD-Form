@@ -213,6 +213,8 @@
         <div class="right-nav">
             <ul>
                 {% if user.is_authenticated %}
+                    <li class="nav-btn" style="color: white;">Welcome, {{ user.username }}</li>
+                    
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <li><input class="nav-btn" type="submit" value="Logout"></li>
