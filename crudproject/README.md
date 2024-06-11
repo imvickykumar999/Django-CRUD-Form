@@ -1,4 +1,23 @@
-### Session Hijacking Using a Leaked SECRET_KEY
+## **Session Hijacking** Using a `Leaked SECRET_KEY`
+
+```bash
+my_django_project/
+├── manage.py
+├── my_django_project/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── app_name/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── views.py
+│   └── ...
+├── forge_session.py  # <- Place your script here
+└── ...
+```
 
 Session hijacking using a leaked Django `SECRET_KEY` typically involves an attacker being able to forge session cookies, which are used to identify logged-in users. Here’s how an attacker might exploit a leaked `SECRET_KEY`:
 
@@ -57,7 +76,7 @@ session_cookie_value = f"{signed_data}"
 **5. Use the Cookie**:
    - The attacker can now set this cookie in their browser and access the application as the user with the specified session data.
 
-### Example Code to Craft a Session Cookie
+## Content of `forge_session.py`
 
 ```python
 import json
@@ -99,9 +118,9 @@ An attacker with access to your `SECRET_KEY` can forge session cookies, allowing
 
 ---
 
-If an attacker gains access to your Django `SECRET_KEY`, they can exploit the password reset mechanism to gain unauthorized access to user accounts. Django's password reset tokens are signed with the `SECRET_KEY`, so with the leaked key, an attacker can forge valid tokens. Here’s how this could be exploited:
+## How Password Reset Works in Django
 
-### How Password Reset Works in Django
+If an attacker gains access to your Django `SECRET_KEY`, they can exploit the password reset mechanism to gain unauthorized access to user accounts. Django's password reset tokens are signed with the `SECRET_KEY`, so with the leaked key, an attacker can forge valid tokens. Here’s how this could be exploited:
 
 1. **User Requests Password Reset**:
    - A user requests a password reset, and Django generates a token that is sent via email. This token is signed using the `SECRET_KEY` and contains information such as the user's ID and a timestamp.
