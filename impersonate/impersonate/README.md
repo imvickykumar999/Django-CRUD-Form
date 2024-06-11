@@ -3,6 +3,13 @@ To run the script that signs session data, you can place it in any folder that h
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+
+pip install --upgrade pip
+pip install django
+pip install -r requirements.txt
+
+python3 manage.py runserver
+python3 forge_session.py
 ```
 
 ### Steps to Run the Script
