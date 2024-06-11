@@ -1,6 +1,13 @@
+import os
 import json
 import base64
+from django.conf import settings
 from django.core.signing import Signer
+
+# Set up Django settings
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_django_project.settings')
+import django
+django.setup()
 
 # The SECRET_KEY from the leaked settings
 SECRET_KEY = 'django-insecure-+bnw67qdf-&yhxri&@@u9zeye3w)u^)v(^s!*b+$$niwef1*&i'
