@@ -1,5 +1,10 @@
 To run the script that signs session data, you can place it in any folder that has access to your Django environment and dependencies. Here are the steps to properly run the script:
 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
 ### Steps to Run the Script
 
 1. **Ensure Django Environment**:
