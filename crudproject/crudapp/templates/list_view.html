@@ -10,11 +10,11 @@
 
                 {% comment %} <p><strong>ID:</strong> {{ data.id }}</p> {% endcomment %}
                 <p><strong>Title:</strong> {{ data.title }}</p>
-                <p><strong>Description:</strong></p>
+                {% comment %} <p><strong>Description:</strong></p>
 
                 <div class="description-card">
                     <p class="description">{{ data.description|safe }}</p>
-                </div>
+                </div> {% endcomment %}
             </div>
 
             <div class="buttons">
